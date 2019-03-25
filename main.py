@@ -22,7 +22,7 @@ def predict_image_class():
     text_img = request.data.get('text_img')
 
     if link_to_image:
-        image_content = requests.get(link_to_image)
+        image_content = requests.get(link_to_image).content
     elif text_img:
         image_content = base64.b64decode(text_img)
     else:
